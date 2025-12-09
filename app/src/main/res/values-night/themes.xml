@@ -1,0 +1,10 @@
+<resources>
+    <style name="Base.Theme.LAB_WEEK_13" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.LAB_WEEK_13" parent="Base.Theme.LAB_WEEK_13" />
+</resources>
