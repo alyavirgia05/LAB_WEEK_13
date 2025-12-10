@@ -1,8 +1,11 @@
-Alya Virgia Aurelline - 00000111025
+**Nama:** Alya Virgia Aurelline  
+**NIM:** 00000111025  
 
-1. Why is MVVM important? Which files represent Model, which files represent
-View, and which files represent ViewModel?
-jawab: 
+---
+
+
+## 1. Why is MVVM important? Which files represent Model, which files represent View, and which files represent ViewModel?
+**Jawab:** 
 MVVM penting karena membantu memisahkan tanggung jawab antara tampilan, pengelola state/logic UI, dan pengelola data
 sehingga kode menjadi lebih rapi, mudah dirawat, dan lebih mudah diuji. Dengan MVVM, Activity/Fragment tidak menjadi
 tempat menumpuk seluruh logic, melainkan fokus mengelola tampilan dan interaksi. Dalam project ini, bagian Model
@@ -12,33 +15,31 @@ oleh MainActivity, DetailsActivity, file layout XML (activity_main.xml, activity
 serta MovieAdapter dan RecyclerViewBinding.kt karena keduanya berhubungan langsung dengan cara data ditampilkan di UI.
 Bagian ViewModel direpresentasikan oleh MovieViewModel yang mengelola state seperti popularMovies dan error untuk dikonsumsi oleh View.
 
-2. In Part 1, you implemented Data Binding, why is this more efficient than using
-the normal method?
-jawab: 
+## 2. In Part 1, you implemented Data Binding, why is this more efficient than using the normal method?
+**Jawab:** 
 Data Binding lebih efisien dibanding metode normal karena mengurangi kode boilerplate dan membuat UI lebih reaktif.
 Dengan Data Binding, penggunaan findViewById dapat diminimalkan, dan data dari ViewModel bisa langsung diikat ke
 komponen UI melalui XML. Ketika binding.viewModel = movieViewModel dan binding.lifecycleOwner = this diterapkan,
 perubahan data dari ViewModel dapat memperbarui tampilan secara otomatis tanpa harus menulis kode observe/collect
 manual di Activity, sehingga implementasi menjadi lebih ringkas, lebih jelas, dan mengurangi risiko bug akibat lupa memperbarui UI.
 
-3. In Part 2, you implemented the Singleton Pattern, why is this important?
-jawab:
+## 3. In Part 2, you implemented the Singleton Pattern, why is this important?
+**Jawab:** 
 Singleton Pattern penting pada implementasi database karena memastikan hanya ada satu instance MovieDatabase selama aplikasi berjalan.
 Dengan pola ini, seluruh bagian aplikasi mengakses database yang sama sehingga mencegah pemborosan memori, konflik akses, dan potensi inkonsistensi data.
 Implementasi getInstance(context) dengan @Volatile dan synchronized juga membantu memastikan pembuatan instance yang aman pada situasi multi-thread,
 sehingga aplikasi lebih stabil saat melakukan operasi database.
 
-4. In Part 2 & 3, you implemented the Repository Pattern, why is this important?
-jawab:
+## 4. In Part 2 & 3, you implemented the Repository Pattern, why is this important?
+**Jawab:** 
 Repository Pattern penting karena menjadi lapisan abstraksi yang menyatukan sumber data dari network dan local database.
 Dalam project ini, MovieRepository mengatur kapan data diambil dari database dan kapan perlu mengambil dari API.
 Contohnya, fetchMovies() akan mengecek data lokal terlebih dahulu, lalu memanggil API jika database kosong, dan hasil dari API
 disimpan kembali ke database. Dengan pola ini, ViewModel tidak perlu mengetahui detail teknis pengambilan data,
 sehingga arsitektur lebih bersih, lebih mudah dikembangkan, dan lebih mudah diuji.
 
-5. In part 3, you implemented the Worker Manager, is there another way to refresh
-your database with the latest data other than using Worker?
-jawab:
+## 5. In part 3, you implemented the Worker Manager, is there another way to refresh your database with the latest data other than using Worker?
+**Jawab:** 
 Selain WorkManager, terdapat cara lain untuk menyegarkan database dengan data terbaru, namun masing-masing memiliki keterbatasan.
 Pembaruan dapat dilakukan saat aplikasi dibuka atau saat halaman tertentu ditampilkan, disediakan juga mekanisme manual seperti pull-to-refresh,
 atau menggunakan timer berbasis coroutine selama proses aplikasi masih hidup. Alternatif lain adalah AlarmManager untuk tugas terjadwal.
