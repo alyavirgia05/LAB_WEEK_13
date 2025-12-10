@@ -19,6 +19,7 @@ materialVersion = "1.7.0"
 recyclerview = "1.4.0"
 retrofit = "3.0.0"
 moshi = "1.15.1"
+room = "2.6.1"
 
 [libraries]
 androidx-appcompat-v151 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -43,6 +44,9 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 material-v170 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
